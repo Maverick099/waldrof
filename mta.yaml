@@ -24,7 +24,27 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
-      []
+      - name: waldrof-destination_service
+      - name: waldrof-connectivity_service
+      - name: waldrof-auth_service
 
 resources:
-  []
+  - name: waldrof-destination_service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+  - name: waldrof-connectivity_service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: connectivity
+      service-plan: lite
+  - name: waldrof-auth_service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: waldrof-${org}-${space}
+        tenant-mode: dedicated

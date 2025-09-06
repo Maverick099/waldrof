@@ -1,0 +1,6 @@
+
+
+@path: 'app'
+service ApplicationService {
+    
+}

@@ -26,8 +26,8 @@
   "scripts": {
     "start": "cds-serve",
     "lint": "npx eslint .",
-    "watch-illustrationexplorer": "cds watch --open waldrof.app.illustrationexplorer/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-launchpad": "cds watch --open waldrof.app.launchpad/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch:illustrationexplorer": "cds watch --open waldrof.app.illustrationexplorer/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch:launchpad": "cds watch --open waldrof.app.launchpad/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "imports": {

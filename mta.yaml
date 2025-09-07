@@ -27,19 +27,41 @@ modules:
       - name: waldrof-destination_service
       - name: waldrof-connectivity_service
       - name: waldrof-auth_service
-
+  - name: waldrof-destination-content
+    type: com.sap.application.content
+    build-parameters:
+      no-source: true
+    parameters:
+      content:
+        subaccount:
+          existing_destinations_policy: update
+          destinations:
+          - Name: waldrof-api 
+            URL: ~{srv-api/srv-url}
+            Authentication: No-Authentication
+            
+    requires:
+    - name: waldrof_destination-service
+      parameters:
+        content-target: true
+    - name: waldrof_auth-service
+      parameters:
+        service-key:
+          name: waldrof_uaa-key
+    - name: waldrof-srv
+      
 resources:
-  - name: waldrof-destination_service
+  - name: waldrof_destination-service
     type: org.cloudfoundry.managed-service
     parameters:
       service: destination
       service-plan: lite
-  - name: waldrof-connectivity_service
+  - name: waldrof_connectivity-service
     type: org.cloudfoundry.managed-service
     parameters:
       service: connectivity
       service-plan: lite
-  - name: waldrof-auth_service
+  - name: waldrof_auth-service
     type: org.cloudfoundry.managed-service
     parameters:
       service: xsuaa

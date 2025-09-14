@@ -1,6 +1,34 @@
 <mvc:View controllerName="waldrof.app.launchpad.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+    xmlns:fiori="sap.f"
+    height="100%"
+    >
+    <App id="launchpad">
+    <pages>
+    <Page id="launchpad-page">
+   
+     <fiori:ShellBar id="launchpad-header-shellbar"
+    showNotifications="true"
+    showProductSwitcher="true"
+    homeIcon="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg.adapt.svg/1493030643828.svg"
+    >
+    <fiori:menu>
+			<Menu id="launchpad-menu-item">
+				<MenuItem id="launchpad-menut-item-1" text="Flight booking" icon="sap-icon://flight" />
+				<MenuItem  id="launchpad-menut-item-2" text="Car rental" icon="sap-icon://car-rental" />
+			</Menu>
+		</fiori:menu>
+    <fiori:profile>
+    	
+    <Avatar id="user-avatar" initials="O"></Avatar>
+    </fiori:profile>
+    </fiori:ShellBar>
+    <content>
+
+    </content>
     </Page>
+    </pages>
+    
+    </App>
 </mvc:View>

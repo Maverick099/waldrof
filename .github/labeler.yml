@@ -1,0 +1,28 @@
+🛠️ cicd:
+- changed-files:
+  - any-glob-to-any-file: [".github/**",".ci/**",".pipelines/**",".circleci/**"]
+
+🗄️docs:
+- changed-files:
+  - any-glob-to-any-file: ["docs/**","readMe.md","ReadMe.md","readme.md","README.md","README"]
+
+⛏️ tool:
+- changed-files:
+  - any-glob-to-any-file: ["tool/**","eslintrc.json"]
+
+🧪 test:
+- changed-files:
+  - any-glob-to-any-file: ["test/**","jest.config.js"]
+
+
+📦 assets:
+- changed-files:
+  - any-glob-to-any-file: ["assets/**","public/**","static/**"]
+
+🗄️ dependencies:
+- changed-files:
+  - any-glob-to-any-file: ["package.json","package-lock.json","yarn.lock","requirements.txt","Pipfile","pubspec.yaml"]
+
+🔌 core:
+- changed-files:
+  - any-glob-to-any-file: ["src/**","lib/**","main.dart","index.js","index.ts","index.jsx","index.tsx"]

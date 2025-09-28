@@ -2,7 +2,7 @@
   "source": {
     "include": ["srv", "app"],
     "includePattern": "\\.(ts|tsx|cds)$",
-    "excludePattern": "(node_modules|test|dist|webapp/resources|webapp/test|\\.test\\.js|\\.spec\\.js)$"
+    "excludePattern": "(node_modules|test|webapp/resources|webapp/test|\\.test\\.js|\\.spec\\.js|\\/dist\\/)$"
   },
   "plugins": [],
   "templates": {

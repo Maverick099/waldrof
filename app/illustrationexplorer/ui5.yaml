@@ -25,6 +25,7 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         flp:
+          path: /test/flpSandbox.html
           theme: sap_horizon
     - name: ui5-tooling-transpile-middleware
       afterMiddleware: compression

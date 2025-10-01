@@ -1,6 +1,163 @@
-<mvc:View controllerName="waldrof.app.illustrationexplorer.controller.App"
+<mvc:View
+    xmlns:cssgrid="sap.ui.layout.cssgrid"
+    xmlns:core="sap.ui.core"
+    controllerName="waldrof.app.illustrationexplorer.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    height="100%"
+    width="100%"
+>
+    <App id='illustration_explorer-app'>
+        <f:DynamicPage
+            id="explorer-page"
+            headerExpanded="true"
+            class="sapUiContentPadding"
+        >
+            <f:title>
+                <f:DynamicPageTitle id="explorer-page-title">
+                    <!-- Breadcrumps -->
+                    <f:breadcrumbs>
+                        <Breadcrumbs id="explorer-page-breadcrumps">
+                            <Link
+                                id="homepage-breadcrump-link"
+                                text="Home"
+                            />
+                            <Link
+                                id="explorerpage-breadcrump-link"
+                                text="Illustration Explorer"
+                            />
+                        </Breadcrumbs>
+                    </f:breadcrumbs>
+
+                    <!-- Heading -->
+                    <f:heading>
+                        <Title
+                            id="heading-title"
+                            text="{i18n>title}"
+                        />
+                    </f:heading>
+                    <!-- sub heading -->
+                    <f:expandedContent>
+                        <Label
+                            id="header-expandedcontent-label"
+                            text="{i18n>subtitle}"
+                        />
+                    </f:expandedContent>
+                    <f:snappedContent>
+                        <Label
+                            id="header-snappedcontent-label"
+                            text="{i18n>subtitle}"
+                        />
+                    </f:snappedContent>
+                    <f:snappedTitleOnMobile>
+                        <Title
+                            id="header-snappedmobtitle-title"
+                            text="{i18n>subtitle}"
+                        />
+                    </f:snappedTitleOnMobile>
+                </f:DynamicPageTitle>
+            </f:title>
+            <f:header>
+                <f:DynamicPageHeader
+                    id="explorer-page-header"
+                    pinnable="true"
+                >
+                    <Select
+                        id="library-select-field"
+                        selectedKey="all_lib-item"
+                        forceSelection="false"
+                        showSecondaryValues="true"
+                    >
+                        <items>
+                            <core:ListItem
+                                id="all_lib-item"
+                                text="All"
+                            />
+
+                            <core:ListItem
+                                id="sapui_lib-item"
+                                text="SAP UI5 Library"
+                            />
+
+                            <core:ListItem
+                                id="tnt_lib-item"
+                                text=" SAP TNT Library"
+                            />
+                        </items>
+                    </Select>
+                    <Slider
+                        id="size-slider"
+                        min="0"
+                        max="5"
+                        enableTickmarks="true"
+                        class="sapUiSmallMarginBottom"
+                        width="50%"
+                    />
+                </f:DynamicPageHeader>
+            </f:header>
+            <f:content>
+                <Panel
+                    id="page-content-panel"
+                    expanded="true"
+                    expandable="false"
+                    backgroundDesign="Translucent"
+                >
+                    <headerToolbar>
+                        <Toolbar
+                            id="panel-header-toolbar"
+                            height="3rem"
+                        >
+                            <Title
+                                id="panel-header-toolbar-title"
+                                text="{i18n>page.panelHeader.titleText}"
+                            />
+                        </Toolbar>
+                    </headerToolbar>
+                    <content>
+                        <f:GridList
+                            id="explorer-gridList"
+                            growing="true"
+                            growingThreshold="30"
+                        >
+                            <f:customLayout>
+                                <cssgrid:GridResponsiveLayout
+                                    id="explorer-gridlist-reposinvelayout"
+                                >
+                                    <cssgrid:layout>
+                                        <cssgrid:GridSettings
+                                            id="explorer-gridlist-reposinvelayout-Layout"
+                                            gridGap="0.5rem 0.5rem"
+                                        />
+                                    </cssgrid:layout>
+                                    <cssgrid:layoutS>
+                                        <cssgrid:GridSettings
+                                            id="explorer-gridlist-reposinvelayout-sLayout"
+                                        />
+                                    </cssgrid:layoutS>
+
+                                    <cssgrid:layoutM>
+                                        <cssgrid:GridSettings
+                                            id="explorer-gridlist-reposinvelayout-mLayout"
+                                        />
+                                    </cssgrid:layoutM>
+                                    <cssgrid:layoutL>
+                                        <cssgrid:GridSettings
+                                            id="explorer-gridlist-reposinvelayout-lLayout"
+                                        />
+                                    </cssgrid:layoutL>
+                                    <cssgrid:layoutXL>
+                                        <cssgrid:GridSettings
+                                            id="explorer-gridlist-reposinvelayout-xlLayout"
+                                        />
+                                    </cssgrid:layoutXL>
+                                </cssgrid:GridResponsiveLayout>
+                            </f:customLayout>
+                        </f:GridList>
+                    </content>
+                </Panel>
+            </f:content>
+        </f:DynamicPage>
+    </App>
 </mvc:View>
